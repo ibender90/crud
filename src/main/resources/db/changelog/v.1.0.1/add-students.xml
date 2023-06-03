@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="add-student1" author="bender">
+        <insert tableName="students">
+            <column name="first_name" value="Test student 1">
+            </column>
+            <column name="age" value="23">
+            </column>
+        </insert>
+        <rollback>
+            DELETE FROM students WHERE name LIKE 'Test student 1';
+        </rollback>
+    </changeSet>
+
+    <changeSet id="add-student2" author="bender">
+        <insert tableName="students">
+            <column name="first_name" value="Test student 2">
+            </column>
+            <column name="age" value="24">
+            </column>
+        </insert>
+        <rollback>
+            DELETE FROM students WHERE name LIKE 'Test student 2';
+        </rollback>
+    </changeSet>
+
+    <changeSet id="add-student3" author="bender">
+        <insert tableName="students">
+            <column name="first_name" value="Test student 3">
+            </column>
+            <column name="age" value="24">
+            </column>
+        </insert>
+        <rollback>
+            DELETE FROM students WHERE name LIKE 'Test student 3';
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
